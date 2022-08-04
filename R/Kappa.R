@@ -32,7 +32,7 @@ Kappa <- function (x, weights = c("Equal-Spacing", "Fleiss-Cohen"))
   pow <- sum(W * x) / n
   pcw <- sum(W * colFreqs %o% rowFreqs)
   kw <- kappa(pow, pcw)
-  sw <- std(x / n, pcw, kw, W)
+  sw <- std(W * x / n, pcw, kw, W)
 
   structure(
             list(Unweighted = c(
